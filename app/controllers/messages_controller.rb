@@ -19,9 +19,7 @@ class MessagesController < ApplicationController
   end
 
   
-  def message_params
-    params.require(:message).permit(:name, :body)
-  end
+  
   ## ここまで
   
   def edit
@@ -43,6 +41,9 @@ class MessagesController < ApplicationController
   end
   
   private
+  def message_params
+    params.require(:message).permit(:name, :body)
+  end
   def set_message
     @message = Message.find(params[:id])
   end
