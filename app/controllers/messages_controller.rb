@@ -18,7 +18,7 @@ class MessagesController < ApplicationController
     end
   end
 
-  private
+  
   def message_params
     params.require(:message).permit(:name, :body)
   end
@@ -28,7 +28,7 @@ class MessagesController < ApplicationController
   end
   
   def update
-    if @message.update(params)
+    if @message.update(message_params)
       # 保存に成功した場合はトップページへリダイレクト
       redirect_to root_path , notice: 'メッセージを編集しました'
     else
