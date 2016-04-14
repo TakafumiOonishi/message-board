@@ -13,13 +13,14 @@
       <div class="navbar-header">
         <a class="navbar-brand" href="#">Message Board</a>
       </div>
-    </div>
+    
     </nav>
       <% if notice %>
         <div class="alert alert-info">
           <%= notice %>
+        </div>
           <%  end %>
           <%= yield %>
-        </div>
+    </div>    
   </body>
 </html>
